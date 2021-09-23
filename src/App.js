@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Spoiler from './components/Spoiler'
+import Counter from './components/Counter'
+import Animals from './components/Animals'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const animalData = [
+	{ id: 1, name: 'Racoon' },
+	{ id: 2, name: 'Squirrel' },
+	{ id: 3, name: 'Cat' },
+	{ id: 4, name: 'Dog' },
+]
+
+const App = () => (
+	<div className="App">
+		<h1> Hello world </h1>
+		<Animals list={animalData} />
+		<p> CLick to reveal the secrets! </p>
+		<Spoiler secret={'Snape'} pub={'The villain is:'} />
+		<Spoiler secret={'Harry'} pub={'The villain is:'} />
+		<Counter />
+	</div>
+);
 
 export default App;
